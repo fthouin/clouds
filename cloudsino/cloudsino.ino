@@ -68,12 +68,12 @@ void fadeinandout(CRGB *leds,int cloudIndices[], int skyIndices[], int faders[])
         leds[i].fadeToBlackBy(abs(255-faders[k]));
         leds[i]/=2;
       }
-      if(faders[k]!=0){faders[k]=(faders[k]+1)%510;}
-      else if (random(0,510)==101) {
+      if(faders[k]!=0){faders[k]=(faders[k]+2)%510;}
+      else if (random(0,1020)==101) {
         faders[k]=1;
       }
       if((faders[0]+faders[1]+faders[2]+faders[3])==0)
-      { faders[int(random(0,4))]=1;}
+      { faders[int(round(random(0,4)))]=1;}
       
   }
   FastLED.show();
